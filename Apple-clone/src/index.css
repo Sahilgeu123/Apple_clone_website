@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: "Regular";
+  src: url("/fonts/regular.otf");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("/fonts/medium.otf");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: url("/fonts/semibold.otf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("/fonts/bold.otf");
+}
+
 html {
   width: 100vw;
   overflow-x: hidden;
@@ -38,4 +59,41 @@ body {
   --color-dark-100: #86868b;
   --color-dark-200: #2e2e30;
   --color-light-100: #adb5bd;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.h3-semibold {
+  font-weight: 600; /* semibold */
+  font-size: 1.25rem; /* text-xl */
+  color: var(--color-dark-100); /* assuming you defined this in :root */
+}
+
+.base-semibold {
+  font-weight: 600;
+  font-size: 1rem; /* text-base */
+  color: var(--color-dark-100);
+}
+
+.small-medium {
+  font-weight: 500; /* medium */
+  font-size: 0.75rem; /* text-xs */
 }
