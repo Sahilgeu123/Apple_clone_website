@@ -1,0 +1,44 @@
+.size-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #262626;   /* neutral-800 */
+  border-radius: 9999px;       /* rounded-full */
+  padding: 0.625rem 1.5rem;    /* py-2.5 px-6 */
+  gap: 0.5rem;                 /* gap-2 */
+  font-weight: 500;            /* small-medium → medium */
+  font-size: 0.75rem;          /* text-xs */
+}
+
+.size-control div {
+  width: 2rem;                 /* size-8 → 32px */
+  height: 2rem;
+  border-radius: 9999px;       /* rounded-full */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;     /* flex-center */
+}
+.color-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* flex-between */
+  background-color: #262626;      /* neutral-800 */
+  border-radius: 9999px;          /* rounded-full */
+  padding: 0.75rem 1.5rem;        /* py-3 px-6 */
+  gap: 1rem;                      /* gap-4 */
+}
+
+.color-control div {
+  width: 1.75rem;                 /* size-7 → 28px */
+  height: 1.75rem;
+  border-radius: 9999px;          /* rounded-full */
+  cursor: pointer;
+}
+
+.color-control .active {
+  width: 1.25rem;                 /* size-5 → 20px */
+  height: 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 5px #f8f9fa;
+}

@@ -61,6 +61,11 @@ body {
   --color-light-100: #adb5bd;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .flex-between {
   display: flex;
   align-items: center;

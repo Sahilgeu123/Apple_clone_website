@@ -14,7 +14,7 @@ const Navbar = () => {
   
   return (
     <header className="w-screen fixed top-0 left-0 z-50 flex-center bg-black min-h-[7vh]">
-      <nav className="px-5 py-2 2xl:px-0 flex  items-center ">
+      <nav className="px-5 py-4 2xl:px-0 flex w-screen ">
         <img
           className="cursor-pointer hover:-translate-y-0.5 transition-all duration-300 ease-in-out"
           src="/logo.svg"
@@ -25,7 +25,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li className="flex-center" key={item.label}>
                 <a
-                  className="hidden md:block text-white opacity-80 font-regular text-sm cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out"
+                  className="hidden md:block r text-white font-semibold opacity-80  text-sm cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out"
                   href={item.label.toLowerCase()}
                 >
                   {item.label}

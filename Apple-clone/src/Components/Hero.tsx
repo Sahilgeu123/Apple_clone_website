@@ -27,8 +27,13 @@ const Hero = () => {
         playsInline
         ref={videoRef}
       />
-      <button>Buy</button>
-      <p>From $1599 or $133/mo. for 12 months</p>
+      <button
+        className="relative z-10 bg-primary text-white py-2 px-6 mt-10 lg:mt-0 mb-5 rounded-full font-semibold text-lg cursor-pointer
+       hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+      >
+        Buy
+      </button>
+      <p className="lg:h3-semibold base-semibold">From $1599 or $133/mo. for 12 months</p>
     </section>
   );
 };
