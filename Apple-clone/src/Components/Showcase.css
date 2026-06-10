@@ -1,0 +1,106 @@
+#showcase {
+  position: relative;
+}
+
+.media {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.media .mask {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.media .mask img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.5) matrix(80, 0, 0, 80, 0, 0);
+}
+
+@media (max-width: 1024px) {
+  #showcase .media .mask img {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+.content {
+  position: relative;
+  z-index: 10;
+  margin: 1.25rem 0; /* spacing top/bottom */
+  background-color: black;
+  font-weight: 600;
+  font-size: 1.25rem; /* text-xl */
+  color: #646464; /* text-dark-100 */
+  opacity: 1;
+  padding: 2rem 1rem; /* add breathing room on small screens */
+  border-radius: 8px; /* optional: soften edges */
+}
+
+/* On large screens, start hidden and overlap video */
+@media (min-width: 1024px) {
+  .content {
+    margin-top: -10rem; /* overlap video */
+    opacity: 0;         /* hidden until GSAP animates */
+    padding: 3rem 2rem; /* more generous spacing */
+  }
+}
+
+.content .wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem; /* slightly smaller gap for mobile */
+}
+
+@media (min-width: 1024px) {
+  .content .wrapper {
+    flex-direction: row;
+    gap: 5rem; /* larger gap for desktop */
+  }
+}
+
+@media (min-width: 1536px) {
+  .content .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.content h2 {
+  font-weight: 600;
+  font-size: 1.875rem;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .content h2 {
+    font-size: 4.5rem;
+  }
+}
+
+.content h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .content h3 {
+    font-size: 3rem;
+  }
+}
+
