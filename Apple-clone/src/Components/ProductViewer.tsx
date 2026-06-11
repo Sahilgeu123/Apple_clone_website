@@ -1,7 +1,5 @@
-import React from "react";
 import type { ComponentType } from "react";
 import { useMediaQuery } from "react-responsive";
-
 import "./product-viewer.css";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
@@ -23,7 +21,7 @@ const ProductViewer = () => {
     <section className="container relative min-h-[93vh] mx-auto px-5 2xl:px-0 mt-40">
       <h2 className="text-white font-semibold text-3xl lg:text-5xl">
         Take a closer look.
-      </h2>
+      </h2> 
       <div className="absolute z-50 bottom-40 lg:bottom-40 2xl:bottom-52 left-1/2 -translate-x-1/2">
        
         <div className="flex-center gap-5 mt-5">

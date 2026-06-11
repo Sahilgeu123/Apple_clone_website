@@ -72,7 +72,8 @@ export default function Macbook14Model(props: Props) {
     "/models/macbook-14-transformed.glb",
   ) as unknown as GLTFResult;
   const texture = useTexture("/screen.png");
-
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
   const {color} = useMacbookStore();
 
   useEffect(() => {
