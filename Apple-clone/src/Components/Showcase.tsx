@@ -1,9 +1,19 @@
+/** @jsxRuntime classic */
+/** @jsx React.createElement */
 import React from "react";
 import "./Showcase.css";
 import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+  }
+}
 
 gsap.registerPlugin(ScrollTrigger);
 const Showcase = () => {
