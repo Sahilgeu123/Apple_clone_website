@@ -1,0 +1,154 @@
+#performance {
+  width: 100vw; /* w-dvw */
+  height: 100%;
+  overflow: hidden;
+  padding-top: 5rem; /* pt-20 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#performance h2 {
+  font-weight: 600; /* font-semibold */
+  font-size: 1.875rem; /* text-3xl */
+  color: white;
+  max-width: 42rem; /* max-w-2xl */
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  #performance h2 {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+#performance .wrapper {
+  width: 80rem; /* w-7xl */
+  height: 50vh;
+  position: relative;
+}
+
+@media (min-width: 1536px) {
+  #performance .wrapper {
+    width: 100rem;
+    height: 100vh;
+  }
+}
+
+#performance .wrapper img {
+  max-width: 10rem; /* max-w-40 */
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 1024px) {
+  #performance .wrapper img {
+    max-width: 27rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  #performance .wrapper img {
+    max-width: 35rem;
+  }
+}
+
+/* Positioned elements */
+#performance .wrapper .p1 {
+  position: absolute;
+  bottom: 50%;
+  left: 23%;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  #performance .wrapper .p1 {
+    left: 33%;
+  }
+}
+
+#performance .wrapper .p2 {
+  position: absolute;
+  bottom: 40%;
+  right: 17%;
+  z-index: 3;
+}
+
+@media (max-width: 640px) {
+  #performance .wrapper .p2 {
+    right: 37%;
+  }
+}
+
+#performance .wrapper .p3 {
+  position: absolute;
+  bottom: 25%;
+  right: 15%;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  #performance .wrapper .p3 {
+    right: 35%;
+  }
+}
+
+#performance .wrapper .p4 {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  #performance .wrapper .p4 {
+    right: 30%;
+  }
+}
+
+#performance .wrapper .p5 {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(1.5);
+}
+
+#performance .wrapper .p6 {
+  position: absolute;
+  bottom: 25%;
+  left: 25%;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  #performance .wrapper .p6 {
+    left: 35%;
+  }
+}
+
+#performance .wrapper .p7 {
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+  z-index: 3;
+}
+
+@media (max-width: 640px) {
+  #performance .wrapper .p7 {
+    left: 35%;
+  }
+}
+
+#performance .content {
+  margin: 6rem auto 0;
+  max-width: 36rem; /* max-w-xl */
+}
+
+#performance .content p {
+  font-weight: 600;
+  text-align: center;
+  transform: translateY(2.5rem);
+  opacity: 0;
+  padding: 0 1.25rem;
+}
