@@ -9,10 +9,12 @@ Title: macbook pro M3 16 inch 2024
 */
 
 import * as THREE from 'three'
-import React from 'react'
-import { useGLTF, useTexture } from '@react-three/drei'
+import React,{useEffect} from 'react'
+import { useGLTF, useTexture, useVideoTexture } from '@react-three/drei'
 type GroupProps = React.JSX.IntrinsicElements["group"];
 import type { GLTF } from 'three-stdlib'
+import useMacbookStore from '../../store';
+import { noChangeParts } from '../../constants';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -61,8 +63,22 @@ type GLTFResult = GLTF & {
 }
 
 export default function MacbookModel(props: GroupProps) {
-  const { nodes, materials } = useGLTF('/models/macbook-transformed.glb') as unknown as GLTFResult
-  const texture = useTexture('/screen.png')
+
+  const {color,texture} =useMacbookStore();
+  const { nodes, materials,scene } = useGLTF('/models/macbook-transformed.glb') as unknown as GLTFResult
+  const screen=useVideoTexture(texture)
+    
+  useEffect(() => {
+    // placeholder: keep a reference to the loaded scene for potential updates
+    // No-op to avoid unused variable warnings
+    scene.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        if (!noChangeParts.includes(child.name)) {
+          child.material.color = new THREE.Color(color);
+        }
+      }
+    });
+  }, [color, scene]);
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_10.geometry} material={materials.PaletteMaterial001} rotation={[Math.PI / 2, 0, 0]} />
@@ -82,8 +98,8 @@ export default function MacbookModel(props: GroupProps) {
       <mesh geometry={nodes.Object_82.geometry} material={materials.gMtYExgrEUqPfln} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_96.geometry} material={materials.PaletteMaterial003} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_107.geometry} material={materials.JvMFZolVCdpPqjj} rotation={[Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_123.geometry} material={materials.sfCQkHOWyrsLmor} rotation={[Math.PI / 2, 0, 0]} >
-      <meshBasicMaterial map={texture}/>
+      <mesh geometry={nodes.Object_123.geometry}  rotation={[Math.PI / 2, 0, 0]} >
+      <meshBasicMaterial map={screen}/>
       </mesh>
       <mesh geometry={nodes.Object_127.geometry} material={materials.ZCDwChwkbBfITSW} rotation={[Math.PI / 2, 0, 0]} />
     </group>
