@@ -13,7 +13,7 @@ const TypedModelSwitcher = ModelSwitcher as ComponentType<{
 }>;
 
 const ProductViewer = () => {
-  const { color, scale, setColor, setScale, reset } = useMacbookStore();
+  const { color, scale, setColor, setScale } = useMacbookStore();
 
   const isMobile = useMediaQuery({ query: "(max-width:1024px)" });
 

@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Showcase.css";
 import { useMediaQuery } from "react-responsive";
 import gsap from "gsap"
