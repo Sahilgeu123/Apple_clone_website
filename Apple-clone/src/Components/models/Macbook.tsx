@@ -10,7 +10,7 @@ Title: macbook pro M3 16 inch 2024
 
 import * as THREE from 'three'
 import React,{useEffect} from 'react'
-import { useGLTF, useTexture, useVideoTexture } from '@react-three/drei'
+import { useGLTF, useVideoTexture } from '@react-three/drei'
 type GroupProps = React.JSX.IntrinsicElements["group"];
 import type { GLTF } from 'three-stdlib'
 import useMacbookStore from '../../store';
@@ -69,12 +69,16 @@ export default function MacbookModel(props: GroupProps) {
   const screen=useVideoTexture(texture)
     
   useEffect(() => {
-    // placeholder: keep a reference to the loaded scene for potential updates
-    // No-op to avoid unused variable warnings
     scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         if (!noChangeParts.includes(child.name)) {
-          child.material.color = new THREE.Color(color);
+          const material = Array.isArray(child.material) ? child.material[0] : child.material;
+          if (material && 'color' in material) {
+            if (child.material === material) {
+              child.material = material.clone();
+            }
+            (child.material as THREE.MeshStandardMaterial).color.set(color);
+          }
         }
       }
     });

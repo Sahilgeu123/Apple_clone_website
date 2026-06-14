@@ -15,14 +15,14 @@ gsap.registerPlugin(ScrollTrigger)
 const App = () => {
   return (
     <main>
-        <Navber/>
-        <Hero/>
-        <ProductViewer/>
-        <Showcase/>
-        <Performance/>
-        <Features/>
-        <Highlights/>
-        <Footer/>
+      <Navber />
+      <Hero />
+      <ProductViewer />
+      <Showcase />
+      <Performance />
+      <Features />
+      <Highlights />
+      <Footer />
     </main>
   )
 }
