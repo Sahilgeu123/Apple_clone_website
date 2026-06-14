@@ -1,3 +1,0 @@
-﻿# Apple_Website_
-# Apple_clone_website
-#Using React,Typescript,Threejs,GSAP etc.
