@@ -92,7 +92,7 @@ const Features = () => {
   return (
     <section id='features'>
       <h2>See it all in new lights.</h2>
-      <Canvas className="canvas !w-full !h-dvh relative z-40" camera={{ position: [0, 0, 5], fov: 50 }}>
+      <Canvas className="canvas w-full! h-dvh! relative z-40" camera={{ position: [0, 0, 5], fov: 50 }}>
         <StudioLights/>
         <ambientLight intensity={0.5}/>
   <directionalLight position={[5, 5, 5]} intensity={1} />

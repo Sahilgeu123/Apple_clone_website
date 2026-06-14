@@ -60,7 +60,7 @@ const ProductViewer = () => {
         </div>
       </div>
       <Canvas
-        className=" !w-full !h-[80vh] lg:!h-dvh relative z-40"
+        className=" w-full! h-[80vh]! lg:h-dvh! relative z-40"
         camera={{ position: [1, 2, 5], fov: 50, near: 0.1, far: 100 }}
       >
         <StudioLights />
